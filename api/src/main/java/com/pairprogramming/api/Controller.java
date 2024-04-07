@@ -9,16 +9,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 public class Controller {
     @GetMapping("{number}")
-    public float returnValue(@PathVariable("number") float number){
+    public int returnValue(@PathVariable("number") int number){
         return number;
     }
 
     @GetMapping
-    public float returnValue(){
+    public int returnValue(){
         return Controller.randomlyGeneratedNumber();
     }
 
-    private static float randomlyGeneratedNumber(){
-        return (float) Math.random();
+    private static int randomlyGeneratedNumber(){
+        return (int) ( 100 *  Math.random());
     }
 }
